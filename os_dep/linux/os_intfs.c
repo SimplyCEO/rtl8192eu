@@ -81,15 +81,15 @@ MODULE_PARM_DESC(rtw_ips_mode, "The default IPS mode");
 module_param(rtw_lps_level, int, 0644);
 MODULE_PARM_DESC(rtw_lps_level, "The default LPS level");
 
-/* LPS: 
+/* LPS:
  * rtw_smart_ps = 0 => TX: pwr bit = 1, RX: PS_Poll
  * rtw_smart_ps = 1 => TX: pwr bit = 0, RX: PS_Poll
  * rtw_smart_ps = 2 => TX: pwr bit = 0, RX: NullData with pwr bit = 0
 */
 int rtw_smart_ps = 2;
 
-#ifdef CONFIG_WMMPS_STA	
-/* WMMPS: 
+#ifdef CONFIG_WMMPS_STA
+/* WMMPS:
  * rtw_smart_ps = 0 => Only for fw test
  * rtw_smart_ps = 1 => Refer to Beacon's TIM Bitmap
  * rtw_smart_ps = 2 => Don't refer to Beacon's TIM Bitmap
@@ -1577,7 +1577,11 @@ int rtw_os_ndev_register(_adapter *adapter, const char *name)
 	u8 rtnl_lock_needed = rtw_rtnl_lock_needed(dvobj);
 
 #ifdef CONFIG_RTW_NAPI
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(6, 1, 0))
+	netif_napi_add(ndev, &adapter->napi, rtw_recv_napi_poll);
+#else
 	netif_napi_add(ndev, &adapter->napi, rtw_recv_napi_poll, RTL_NAPI_WEIGHT);
+#endif
 #endif /* CONFIG_RTW_NAPI */
 
 #if defined(CONFIG_IOCTL_CFG80211)

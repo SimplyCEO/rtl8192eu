@@ -3,11 +3,13 @@ RTL8192EU
 Linux driver for Realtek **RTL8192EU** based on official's **TP Link TL - WN823N V3 Beta** v5.2.19.1 from 2018-05-08<br>
 Supports monitor mode and frame injection for penetration testing abilities.
 
+Trying to find a solution? See [troubleshooting](./docs/TROUBLESHOOTING.md).
+
 |   Support         |   Tested  |   Status  |   Description                                     |
 |-------------------|-----------|-----------|---------------------------------------------------|
 |   Monitor Mode    |   ✅      |   🔵      |   Tested and working.                             |
 |   Frame injection |   ✅      |   🔵      |   Tested and working.                             |
-|   Kernel 4.15+    |   ✅      |   🟠      |   Kernel 6.1.7 tested.                            |
+|   Kernel 4.15+    |   ✅      |   🟠      |   Kernel 6.1.7+ tested.                           |
 
 |   Devices         |   Tested  |   Status  |   Description                                     |
 |-------------------|-----------|-----------|---------------------------------------------------|
@@ -19,30 +21,17 @@ Supports monitor mode and frame injection for penetration testing abilities.
 
 Build
 -----
-Make sure you have installed the following packages:
 
-|   Package     |   URL                                             |
-|---------------|---------------------------------------------------|
-|   gcc         |   https://ftp.gnu.org/gnu/gcc/                    |
-|   git         |   https://github.com/git/git                      |
-|   make        |   https://ftp.gnu.org/gnu/make/                   |
+All the instructions are being moved to the [Documentation](./docs/BUILDING.md) or the [Wiki](https://gitlab.com/KanuX/rtl8192eu/-/wikis/home).
 
-Download and unpack this repo, or just clone with git:
-```sh
-git clone https://gitlab.com/KanuX/rtl8192eu.git
-cd rtl8192eu/
- ```
+Credits
+-------
 
-Build the module:
- ```sh
-make -$(nproc) && sudo make install
- ```
- 
-Load the module:
- ```sh
- sudo modprobe 8192eu
- ```
+Realtek       - https://www.realtek.com<br>
+Project contributors - https://gitlab.com/KanuX/rtl8188eus/-/graphs/master?ref_type=heads
 
- Original TP Link driver
- -----------------------
- https://static.tp-link.com/2018/201805/20180514/TP-Link_Driver_Linux_series8_beta.zip
+And all those who are using, requesting support, or teaching. Thanks!
+
+Original TP Link driver
+-----------------------
+https://static.tp-link.com/2018/201805/20180514/TP-Link_Driver_Linux_series8_beta.zip

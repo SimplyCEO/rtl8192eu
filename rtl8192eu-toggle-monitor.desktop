@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=rtl8192eu toggle
+GenericName=rtl8192eu toggle
+Comment=Toggle to and from monitor mode
+Exec=toggle-monitor
+Terminal=true
+Categories=Application;Utility;Network;
+StartupNotify=true

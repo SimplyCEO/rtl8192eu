@@ -15,7 +15,7 @@ Trying to find a solution? See [troubleshooting](./docs/TROUBLESHOOTING.md).
 |-------------------|-----------|-----------|---------------------------------------------------|
 |   DWA-131         |   ❌      |   🟡      |   Waiting confirmation.                           |
 |   GW-300S Katana  |   ❌      |   🟡      |   Waiting confirmation.                           |
-|   TL-WN821N V6    |   ❌      |   🟡      |   Waiting confirmation.                           |
+|   TL-WN821N V6    |   ✅      |   🟢      |   Device starts.                                  |
 |   TL-WN822N V5    |   ❌      |   🟡      |   Waiting confirmation.                           |
 |   TL-WN823N V3    |   ❌      |   🟡      |   Waiting confirmation.                           |
 

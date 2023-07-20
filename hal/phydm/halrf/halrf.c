@@ -887,11 +887,8 @@ halrf_support_ability_debug(
 	u32 out_len = *_out_len;
 	u8	i;
 
-	for (i = 0; i < 5; i++) {
-		if (input[i + 1]) {
-			PHYDM_SSCANF(input[i + 1], DCMD_DECIMAL, &dm_value[i]);
-		}
-	}
+	for (i=0; (i<5 && strnlen(input[i+1], 1)); i++)
+	{ PHYDM_SSCANF(input[i+1], DCMD_DECIMAL, &dm_value[i]); }
 	
 	PHYDM_SNPRINTF((output + used, out_len - used, "\n%s\n", "================================"));
 	if (dm_value[0] == 100) {

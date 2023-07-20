@@ -1690,11 +1690,8 @@ phydm_pause_func_console(
 		
 	} else {
 
-		for (i = 0; i < 10; i++) {
-			if (input[i + 1]) {
-				PHYDM_SSCANF(input[i + 1], DCMD_HEX, &var1[i]);
-			}
-		}
+		for (i=0; (i<10 && strnlen(input[i+1], 1)); i++)
+		{ PHYDM_SSCANF(input[i+1], DCMD_HEX, &var1[i]); }
 
 		func = (enum phydm_func_idx_e)var1[0];
 		pause_type = (enum phydm_pause_type)var1[1];

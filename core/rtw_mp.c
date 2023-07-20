@@ -1388,7 +1388,6 @@ exit:
 	pmptx->pallocated_buf = NULL;
 	pmptx->stop = 1;
 
-	thread_exit(NULL);
 	return 0;
 }
 
